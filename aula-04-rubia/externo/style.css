@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: white;
+}
+
+header {
+    background-color: lightblue;
+}
+
+main {
+    font-size: 16px;
+}
+
+p {
+    font-size: 2em;
+}
+
+.blocos {
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    width: 800px;
+}
+
+.bloco1 {
+    border: inset,20px,red;
+    border-radius: 20px;
+}
+
+.bloco2 {
+    width: 100px;
+    border: inset,20px,blue;
+    border-radius: 20px;
+}
+
+.bloco3 {
+    width: 100px;
+    border: inset,20px,green;
+    border-radius: 20px;
+}
