@@ -1,3 +1,4 @@
+@import url("cores.css");
 * {
     margin: 0;
     padding: 0;
@@ -5,7 +6,6 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-@import url("cores.css");
 
 header {
     background-image: linear-gradient(to bottom, var(--cor-cabecalho-inicial), var(--cor-cabecalho-final));
