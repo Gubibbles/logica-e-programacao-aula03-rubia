@@ -5,24 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio alt</title>
     <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
     <!-- DESKTOP -->
     <main class="desktop">
-        <div class="icone">
-            <img src="imagem/icon-docs.png" alt="Meus Documentos">
+        <div class="icone" id="meus-documentos">
+            <img src="imagem/icon-docs.png" alt="meus documentos">
+            <span>Sobre Mim</span>
         </div>
     </main>
 
+    <!-- JANELA SOBRE MIM -->
+    <div class="window" id="sobre-mim-window">
+        <div class="title-bar">
+            <div class="title-bar-text">
+                <img src="imagem/icon-docs.png" alt="ícone" class="window-icon">
+                Sobre Mim
+            </div>
+            <div class="title-bar-controls">
+                <button aria-label="Close" onclick="fecharJanela('sobre-mim-window')"></button>
+            </div>
+        </div>
+        
+        <div class="window-body">
+            <h2>Olá, me chamo Rúbia, prazer em te conhecer!</h2>
+            <p>Um pouco mais sobre mim:</p>
+            <ul>
+                <li>Estou cursando Análise e Desenvolvimento de Sistemas na UMC</li>
+                <li>Estou aprendendo frontend web development</li>
+                <li>Sou tatuadora em um estúdio no centro de Mogi das Cruzes</li>
+            </ul>
+            <p>Tem interesse em trabalhar comigo? Me mande um e-mail em: mrsgbbs@hotmail.com! :D</p>
+        </div>
+    </div>
+
     <!-- FOOTER - TASKBAR -->
     <footer class="taskbar">
+        <!-- BOTÃO INICIAR -->
+        <div class="start-button">
+            <img src="imagem/icon-windows-xp.png" alt="Iniciar">
+            <span>Iniciar</span>
+        </div>
 
         <!-- PROGRAMAS -->
         <div class="quick-start">
-            <div class="windows-button active">
-                <img src="imagem/icon-windows-xp.png" alt="icon windowsxp">
-                <span>Home Page</span>
+            <div class="windows-button" id="docs-button">
+                <img src="imagem/icon-docs.png" alt="icon explorador de arquivos">
+                <span>Sobre Mim</span>
             </div>
         </div>
 

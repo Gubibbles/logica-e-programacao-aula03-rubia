@@ -7,6 +7,7 @@
     --azul-claro: #BDE0FE;
     --texto-branco: white;
     --sombra: rgba(0, 0, 0, 0.3);
+    --borda-escura: #8a5ce0;
 }
 
 /* DESKTOP */
@@ -14,12 +15,24 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
-    background-color: var(--azul-claro);
-    background-size: cover;
-    background-position: center;
     font-family: 'Tahoma', 'Arial', sans-serif;
     overflow: hidden;
     color: #000;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url('imagem/background-gif.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
 }
 
 .desktop {
@@ -30,6 +43,7 @@ body {
     flex-wrap: wrap;
     align-content: flex-start;
     gap: 20px;
+    position: relative;
 }
 
 /* ICONES DO DESKTOP */
@@ -70,30 +84,33 @@ body {
         var(--roxo-escuro) 0%,
         var(--roxo-claro) 40%,
         var(--roxo-claro) 60%,
-        var(--roxo-claro) 100%
+        var(--roxo-escuro) 100%
     );
-    border-top: 1px solid var(--roxo-escuro);
+    border-top: 1px solid var(--borda-escura);
     display: flex;
     align-items: center;
     box-shadow: 0 -1px 5px var(--sombra);
-    gap: 5px;
     padding: 0 5px;
+    justify-content: space-between;
+    z-index: 10;
 }
 
 /* BOTÃO INICIAR */
 .start-button {
-    height: 100%;
+    height: 30px;
     padding: 0 12px;
     display: flex;
     align-items: center;
-    background: linear-gradient(to bottom, var(--roxo-escuro), var(--roxo-claro));
+    background: linear-gradient(to bottom, var(--roxo-escuro), var(--borda-escura));
     color: var(--texto-branco);
     font-weight: bold;
     font-size: 13px;
-    border: 1px solid var(--roxo-escuro);
+    border: 1px solid var(--borda-escura);
     border-radius: 3px;
-    margin: 0 5px;
     cursor: pointer;
+    box-shadow: inset 1px 1px 0px var(--roxo-claro),
+                inset -1px -1px 0px var(--borda-escura);
+    margin-right: 5px;
 }
 
 .start-button img {
@@ -106,13 +123,17 @@ body {
     background: linear-gradient(to bottom, var(--roxo-claro), var(--roxo-escuro));
 }
 
-/* PROGRAMAS NA TASKBAR */
+.start-button:active {
+    background: linear-gradient(to bottom, var(--borda-escura), var(--roxo-escuro));
+    box-shadow: inset 1px 1px 0px var(--borda-escura), 
+                inset -1px -1px 0px var(--roxo-claro);
+}
+
+/* BOTÕES NA TASKBAR */
 .quick-start {
-    flex-grow: 1;
-    height: 100%;
     display: flex;
     align-items: center;
-    gap: 5px;
+    flex-grow: 1;
 }
 
 .windows-button {
@@ -122,22 +143,131 @@ body {
     align-items: center;
     gap: 6px;
     background: linear-gradient(to bottom, var(--roxo-claro), var(--roxo-escuro));
-    border: 1px solid var(--roxo-escuro);
+    border: 1px solid var(--borda-escura);
     border-radius: 3px;
     cursor: pointer;
     font-size: 12px;
     color: var(--texto-branco);
     min-width: 160px;
+    box-shadow: inset 1px 1px 0px var(--rosa-claro),
+                inset -1px -1px 0px var(--borda-escura);
+    margin-right: 5px;
 }
 
 .windows-button.active {
     background: linear-gradient(to bottom, var(--roxo-escuro), var(--roxo-claro));
-    border: 1px solid var(--roxo-escuro);
+    box-shadow: inset 1px 1px 0px var(--borda-escura), 
+                inset -1px -1px 0px var(--rosa-claro);
 }
 
 .windows-button img {
-    width: 30px;
+    width: 16px;
+    height: 16px;
+}
+
+/* JANELAS*/
+.window {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background-color: var(--roxo-claro);
+    border: 2px solid;
+    border-color: var(--rosa-claro) var(--borda-escura) var(--borda-escura) var(--rosa-claro);
+    box-shadow: 2px 2px 4px var(--sombra);
+    display: none;
+    z-index: 100;
+}
+
+.title-bar {
+    background: linear-gradient(to bottom, var(--roxo-escuro), var(--roxo-claro));
+    padding: 3px 2px 3px 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 11px;
+}
+
+.title-bar-text {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.window-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.title-bar-controls {
+    display: flex;
+}
+
+.title-bar-controls button {
+    margin-left: 2px;
+    width: 21px;
+    height: 21px;
+    background-color: var(--roxo-claro);
+    border: 1px solid;
+    border-color: white var(--borda-escura) var(--borda-escura) white;
+    position: relative;
+    cursor: pointer;
+}
+
+.title-bar-controls button:hover {
+    background-color: var(--rosa-claro);
+}
+
+.title-bar-controls button:active {
+    border-color: var(--borda-escura) white white var(--borda-escura);
+}
+
+.title-bar-controls button::after {
+    content: "×";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+}
+
+.window-body {
+    padding: 15px;
+    font-size: 12px;
+    color: black;
+    background-color: white;
+    border: 1px solid;
+    border-color: var(--borda-escura) white white var(--borda-escura);
+    margin: 2px;
+}
+
+/* JANELA ATIVA*/
+.window.active {
+    display: block;
+}
+
+.windows-button.active {
+    background: linear-gradient(to bottom, var(--roxo-escuro), var(--roxo-claro));
+    box-shadow: inset 1px 1px 0px var(--borda-escura), 
+                inset -1px -1px 0px var(--rosa-claro);
+}
+
+/* ÁREA DE NOTIFICAÇÃO */
+.system-tray {
     height: 30px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to bottom, var(--roxo-claro), var(--roxo-escuro));
+    border: 1px solid var(--borda-escura);
+    border-radius: 3px;
+    box-shadow: inset 1px 1px 0px var(--rosa-claro), 
+                inset -1px -1px 0px var(--borda-escura);
 }
 
 /* RELÓGIO */
