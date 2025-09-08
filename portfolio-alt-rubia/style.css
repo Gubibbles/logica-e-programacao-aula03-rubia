@@ -165,12 +165,11 @@ body::before {
     height: 16px;
 }
 
-/* JANELAS*/
+/* JANELAS */
 .window {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
     width: 400px;
     background-color: var(--roxo-claro);
     border: 2px solid;
@@ -189,6 +188,16 @@ body::before {
     color: white;
     font-weight: bold;
     font-size: 11px;
+    cursor: move;
+}
+
+.title-bar:active {
+    cursor: grabbing;
+}
+
+.window.dragging {
+    opacity: 0.9;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
 }
 
 .title-bar-text {
@@ -244,6 +253,36 @@ body::before {
     border: 1px solid;
     border-color: var(--borda-escura) white white var(--borda-escura);
     margin: 2px;
+}
+
+/* FOTO DE PERFIL REDONDA */
+.profile-photo-container {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.profile-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--roxo-claro);
+    box-shadow: 0 2px 5px var(--sombra);
+}
+
+/* Melhorias para o conteúdo da janela */
+.window-body h2 {
+    text-align: center;
+    margin-top: 0;
+    color: var(--roxo-escuro);
+}
+
+.window-body ul {
+    padding-left: 20px;
+}
+
+.window-body li {
+    margin-bottom: 8px;
 }
 
 /* JANELA ATIVA*/
