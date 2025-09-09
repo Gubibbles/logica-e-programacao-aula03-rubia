@@ -12,18 +12,19 @@ function updateClock() {
 setInterval(updateClock, 60000);
 
 // ABRIR A JANELA
+// ABRIR A JANELA
 function abrirJanela(idJanela) {
     const janela = document.getElementById(idJanela);
-    janela.style.display = 'block';
+    janela.style.display = 'flex';
     
-    const windowWidth = janela.offsetWidth;
-    const windowHeight = janela.offsetHeight;
+    const windowWidth = 500;
+    const windowHeight = 400;
     const left = (window.innerWidth - windowWidth) / 2;
     const top = (window.innerHeight - windowHeight) / 2;
     
     janela.style.left = left + 'px';
     janela.style.top = top + 'px';
-    janela.style.transform = 'none'; // Remover transform
+    janela.style.transform = 'none';
     
     document.getElementById('docs-button').classList.add('active');
 }
