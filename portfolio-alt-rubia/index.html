@@ -10,8 +10,18 @@
     <!-- DESKTOP -->
     <main class="desktop">
         <div class="icone" id="meus-documentos">
-            <img src="imagem/icon-docs.png" alt="meus documentos">
+            <img src="imagem/icon-person.png" alt="Sobre Mim">
             <span>Sobre Mim</span>
+        </div>
+
+        <div class="icone" id="trabalhos-icon">
+            <img src="imagem/icon-docs.png" alt="Meus Trabalhos">
+            <span>Meus Trabalhos</span>
+        </div>
+
+        <div class="icone" id="links-icon">
+            <img src="imagem/icon-links.png" alt="Meus Links">
+            <span>Meus Links</span>
         </div>
     </main>
 
@@ -19,7 +29,7 @@
     <div class="window" id="sobre-mim-window">
         <div class="title-bar" id="sobre-mim-titlebar">
             <div class="title-bar-text">
-                <img src="imagem/icon-docs.png" alt="ícone" class="window-icon">
+                <img src="imagem/icon-person.png" alt="ícone" class="window-icon">
                 Sobre Mim
             </div>
             <div class="title-bar-controls">
@@ -44,11 +54,13 @@
                 <li>Ensino superior cursando - Universiddade de Mogi das Cruzes</li>
                 <li>Ensino médio completo</li>
                 <li>Inglês - CNA</li>
+                <li>Fundamentos de Data Science e Inteligência Artifical - Data Science Academy</li>
+                <li>Fundamentos de Linguagem Python para Análise de Dados e Data Science (nível básico) - Data Science Academy</li>
             </ul>
             <h3>Habilidades e conhecimentos técnicos</h3>
             <ul>
-                <li>HTML</li>
-                <li>CSS</li>
+                <li>Frontend web development</li>
+                <li>HTML/CSS</li>
                 <li>JavaScript</li>
                 <li>Python</li>
                 <li>Pacote Office</li>
@@ -70,6 +82,113 @@
         </div>
     </div>
 
+    <!-- JANELA TRABALHOS -->
+    <div class="window" id="trabalhos-window">
+        <div class="title-bar" id="trabalhos-titlebar">
+            <div class="title-bar-text">
+                <img src="imagem/icon-docs.png" alt="ícone" class="window-icon">
+                Meus Trabalhos
+            </div>
+            <div class="title-bar-controls">
+                <button aria-label="Close" onclick="fecharJanela('trabalhos-window')"></button>
+            </div>
+        </div>
+        <div class="window-body">
+            <h2>Meus Links Profissionais</h2>
+            <p>Acesse meu GitHub no botão abaixo para ver alguns dos meus projetos!</p>
+            <div class="links-container">
+                <a href="https://github.com/gubibbles" target="_blank" class="xp-button">
+                    <img src="imagem/icon-github-alt.png" alt="GitHub">
+                    GitHub
+                </a>
+                <a href="http://www.linkedin.com/in/rúbia-grasiela-dos-santos-tavares-64b0ba1aa" target="_blank" class="xp-button">
+                    <img src="imagem/icon-linkedin-alt.png" alt="LinkedIn">
+                    LinkedIn
+                </a>
+            </div>
+
+            <h2>Artes</h2>
+            <div class="gallery">
+                <img src="imagem/arte1.jpeg" alt="Arte 1" class="gallery-img">
+                <img src="imagem/arte2.jpeg" alt="Arte 2" class="gallery-img">
+                <img src="imagem/arte3.jpeg" alt="Arte 3" class="gallery-img">
+                <img src="imagem/arte4.jpeg" alt="Arte 4" class="gallery-img">
+                <img src="imagem/arte5.jpeg" alt="Arte 5" class="gallery-img">
+                <img src="imagem/arte 6.jpeg" alt="Arte 6" class="gallery-img">
+            </div>
+        </div>
+    </div>
+
+     <!-- JANELA MEUS LINKS -->
+    <div class="window" id="links-window">
+        <div class="title-bar" id="links-titlebar">
+            <div class="title-bar-text">
+                <img src="imagem/icon-links.png" alt="ícone" class="window-icon">
+                Meus Links
+            </div>
+            <div class="title-bar-controls">
+                <button aria-label="Close" onclick="fecharJanela('links-window')"></button>
+            </div>
+        </div>
+
+        <div class="window-body">
+            <h2>Minhas Redes e Contatos</h2>
+
+            <div class="icons-grid">
+                <!-- Facebook -->
+                 <a href="https://www.facebook.com/rubiagrasiela.santostavares" target="_blank" class="icon-link">
+                    <img src="imagem/icon-facebook.png" alt="Facebook">
+                    <span>Facebook</span>
+                 </a>
+                <!-- Instagram -->
+                  <a href="https://www.instagram.com/gubibbles" target="_blank" class="icon-link">
+                    <img src="imagem/icon-instagram.png" alt="Instagram">
+                    <span>Instagram</span>
+                  </a>
+                <!-- Discord -->
+                 <a href="https://discord.gg/9xqEPHVK" target="_blank" class="icon-link">
+                    <img src="imagem/icon-discord.png" alt="Discord">
+                    <span>Discord</span>
+                 </a>
+                <!-- Steam -->
+                 <a href="https://steamcommunity.com/id/honneybunny/" target="_blank" class="icon-link">
+                    <img src="imagem/icon-steam.png" alt="Steam">
+                    <span>Steam</span>
+                 </a>
+                <!-- GitHub -->
+                 <a href="https://github.com/gubibbles" target="_blank" class="icon-link">
+                    <img src="imagem/icon-github-pixel.png" alt="GitHub">
+                    <span>GitHub</span>
+                 </a>
+                <!-- LinkedIn -->
+                 <a href="http://www.linkedin.com/in/rúbia-grasiela-dos-santos-tavares-64b0ba1aa" target="_blank" class="icon-link">
+                    <img src="imagem/icon-linkedin-pixel.png" alt="LinkedIn">
+                    <span>LinkedIn</span>
+                 </a>
+                <!-- E-mail -->
+                 <a href="mailto:mrsgbbs@hotmail.com" class="icon-link">
+                    <img src="imagem/icon-email.png" alt="E-mail">
+                    <span>E-mail</span>
+                 </a>
+                <!-- Backloggd -->
+                 <a href="https://www.backloggd.com/u/gubibbles" target="_blank" class="icon-link">
+                    <img src="imagem/icon-game.png" alt="Backloggd">
+                    <span>Backloggd</span>
+                 </a>
+                <!-- Skoob -->
+                 <a href="https://www.skoob.com.br/usuario/8546881-gubi" target="_blank" class="icon-link">
+                    <img src="imagem/icon-bookshelf.png" alt="Skoob">
+                    <span>Skoob</span>
+                 </a>
+                <!-- Spotify -->
+                 <a href="https://open.spotify.com/user/gubibbles" target="_blank" class="icon-link" >
+                    <img src="imagem/icon-spotify.png" alt="Spotify">
+                    <span>Spotify</span>
+                 </a>
+            </div>
+        </div>
+    </div>
+
     <!-- FOOTER - TASKBAR -->
     <footer class="taskbar">
         <!-- BOTÃO INICIAR -->
@@ -80,9 +199,17 @@
 
         <!-- PROGRAMAS -->
         <div class="quick-start">
-            <div class="windows-button" id="docs-button">
-                <img src="imagem/icon-docs.png" alt="icon explorador de arquivos">
+            <div class="windows-button" id="sobre-mim-button">
+                <img src="imagem/icon-person.png" alt="Sobre Mim">
                 <span>Sobre Mim</span>
+            </div>
+            <div class="windows-button" id="trabalhos-button">
+                <img src="imagem/icon-docs.png" alt="Meus Trabalhos">
+                <span>Meus Trabalhos</span>
+            </div>
+            <div class="windows-button" id="links-button">
+                <img src="imagem/icon-links.png" alt="Meus Links">
+                <span>Meus Links</span>
             </div>
         </div>
 
@@ -95,5 +222,11 @@
     </footer>
 
     <script src="script.js"></script>
+
+    <!-- MODAL PARA IMAGENS -->
+    <div id="image-modal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modal-image">
+    </div>
 </body>
 </html>
