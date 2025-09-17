@@ -23,6 +23,11 @@
             <img src="imagem/icon-links.png" alt="Meus Links">
             <span>Meus Links</span>
         </div>
+
+        <div class="icone" id="music-icon">
+            <img src="imagem/icon-music.png" alt="Music Player">
+            <span>Music Player</span>
+        </div>
     </main>
 
     <!-- JANELA SOBRE MIM -->
@@ -80,6 +85,7 @@
                 <li>Anime e mangá</li>
             </ul>
         </div>
+        <div class="window-resize-handle"></div>
     </div>
 
     <!-- JANELA TRABALHOS -->
@@ -117,6 +123,7 @@
                 <img src="imagem/arte 6.jpeg" alt="Arte 6" class="gallery-img">
             </div>
         </div>
+        <div class="window-resize-handle"></div>
     </div>
 
      <!-- JANELA MEUS LINKS -->
@@ -187,6 +194,63 @@
                  </a>
             </div>
         </div>
+        <div class="window-resize-handle"></div>
+    </div>
+
+    <!-- JANELA MUSIC PLAYER -->
+    <div class="window" id="music-window">
+        <div class="title-bar" id="music-titlebar">
+            <div class="title-bar-text">
+                <img src="imagem/icon-music.png" alt="ícone" class="window-icon">
+                Windows Media Player
+            </div>
+            <div class="title-bar-controls">
+                <button aria-label="Close" onclick="fecharJanela('music-window')"></button>
+            </div>
+        </div>
+
+        <div class="window-body">
+            <div class="music-player">
+                <div class="player-header">
+                    <h2>Windows Media Player</h2>
+                    <div class="player-controls">
+                        <button id="prev-btn" class="control-btn">⏮</button>
+                        <button id="play-btn" class="control-btn">▶</button>
+                        <button id="pause-btn" class="control-btn">⏸</button>
+                        <button id="next-btn" class="control-btn">⏭</button>
+                        <button id="stop-btn" class="control-btn">⏹</button>
+                    </div>
+                </div>
+
+                <div class="now-playing">
+                    <div id="current-song">Nenhuma música selecionada</div>
+                    <div class="progress-container">
+                        <div id="progress-bar" class="progress-bar"></div>
+                    </div>
+                    <div class="time-display">
+                        <span id="current-time">0:00</span>
+                        <span id="total-time">0:00</span>
+                    </div>
+                </div>
+
+                <div class="volume-control">
+                    <label for="volume-slider">Volume:</label>
+                    <input type="range" id="volume-slider" min="0" max="100" value="70">
+                </div>
+
+                <div class="playlist">
+                    <h3>Playlist</h3>
+                    <ul id="playlist">
+                        <li data-src="musicas/musica1.mp3">Complicated - Avril Lavigne</li>
+                        <li data-src="musicas/musica2.mp3">All The Things She Said - t.A.T.u</li>
+                        <li data-src="musicas/musica3.mp3">Bring Me To Life - Evanescence</li>
+                        <li data-src="musicas/musica4.mp3">Pretty Girl - Clairo</li>
+                        <li data-src="musicas/musica5.mp3">Pitty Party - Melanie Martinez</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="window-resize-handle"></div>
     </div>
 
     <!-- FOOTER - TASKBAR -->
@@ -211,6 +275,10 @@
                 <img src="imagem/icon-links.png" alt="Meus Links">
                 <span>Meus Links</span>
             </div>
+            <div class="windows-button" id="music-button">
+                <img src="imagem/icon-music.png" alt="Music Player">
+                <span>Music Player</span>
+            </div>
         </div>
 
         <!-- RELÓGIO -->
@@ -222,6 +290,11 @@
     </footer>
 
     <script src="script.js"></script>
+
+    <!-- ÁUDIO -->
+     <audio id="audio-player"></audio>
+
+     <script src="script.js"></script>
 
     <!-- MODAL PARA IMAGENS -->
     <div id="image-modal" class="modal">
