@@ -48,6 +48,7 @@ body::before {
 
 /* ICONES DO DESKTOP */
 .icone {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -70,6 +71,70 @@ body::before {
     background-color: rgba(205, 180, 219, 0.7);
     padding: 2px 4px;
     border-radius: 3px;
+}
+
+.icone .tooltip {
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(to bottom, #ffffe1, #ffffcc);
+    color: #000;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 11px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 1000;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+    max-width: 150px;
+    word-wrap: break-word;
+    white-space: normal;
+    text-align: center;
+}
+
+.icone:nth-child(1) .tooltip,
+.icone:nth-child(2) .tooltip {
+    left: 0;
+    transform: translateX(0);
+}
+
+.icone:nth-child(1) .tooltip::after,
+.icone:nth-child(2) .tooltip::after {
+    left: 20px;
+}
+
+.icone:nth-last-child(1) .tooltip,
+.icone:nth-last-child(2) .tooltip {
+    left: auto;
+    right: 0;
+    transform: translateX(0);
+}
+
+.icone:nth-last-child(1) .tooltip::after,
+.icone:nth-last-child(2) .tooltip::after {
+    left: auto;
+    right: 20px;
+}
+
+.icone .tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #ffffcc transparent transparent transparent;
+}
+
+.icone:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
 }
 
 /* FOOTER - TASKBAR */
@@ -137,6 +202,7 @@ body::before {
 }
 
 .windows-button {
+    position: relative;
     height: 30px;
     padding: 0 12px;
     display: flex;
@@ -163,6 +229,61 @@ body::before {
 .windows-button img {
     width: 16px;
     height: 16px;
+}
+
+.windows-button .taskbar-tooltip {
+    position: absolute;
+    bottom: calc(100% + 5px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(to bottom, #ffffe1, #ffffcc);
+    color: #000;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 11px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 1000;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+    margin-bottom: 5px;
+    max-width: 150px;
+    word-wrap: break-word;
+    white-space: normal;
+    text-align: center;
+}
+
+.windows-button .taskbar-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #ffffcc transparent transparent transparent;
+}
+
+.windows-button:hover .taskbar-tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ÍCONE LIXEIRA */
+#lixeira-icon {
+    position: relative;
+}
+
+#lixeira-icon img {
+    filter: grayscale(30%);
+    transition: filter 0.3s ease;
+}
+
+#lixeira-icon:hover img {
+    filter: grayscale(0%);
 }
 
 /* JANELAS */
@@ -689,6 +810,11 @@ body.window-resizing {
 
 #pause-btn {
     display: none;
+}
+
+/* EFEITO DO ÍCONE MINECRAFT */
+#minecraft-icon, #minecraft-button {
+    position: relative;
 }
 
 /* BARRA DE ROLAGEM DAS JANELAS */

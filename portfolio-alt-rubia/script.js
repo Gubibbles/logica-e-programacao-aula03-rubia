@@ -186,6 +186,7 @@ function fecharModal() {
 
 document.addEventListener('DOMContentLoaded', function() {
     updateClock();
+    setupMinecraftIcon();
 
     const sobreMimButton = document.getElementById('sobre-mim-button');
     const sobreMimIcon = document.getElementById('meus-documentos');
@@ -531,4 +532,39 @@ function formatTime(seconds) {
     const minutes = Math.floor(seconds / 60);
     const secs = Math.floor(seconds % 60);
     return minutes + ':' + (secs < 10 ? '0' : '') + secs;
+}
+
+// FUNÇÃO PARA O ÍCONE MINECRAFT
+function setupMinecraftIcon() {
+    const minecraftIcon = document.getElementById('minecraft-icon');
+    const minecraftButton = document.getElementById('minecraft-button');
+    
+    // Configurar clique para ambos
+    const minecraftClick = function(e) {
+        e.stopPropagation();
+        console.log('💎 Minecraft é realmente o melhor jogo do mundo!');
+    };
+    
+    if (minecraftIcon) minecraftIcon.addEventListener('click', minecraftClick);
+    if (minecraftButton) minecraftButton.addEventListener('click', minecraftClick);
+}
+
+// EFEITOS ESPECIAIS PARA MINECRAFT
+function createMinecraftEffect(x, y) {
+    const effect = document.createElement('div');
+    effect.className = 'minecraft-effect';
+    document.body.appendChild(effect);
+    
+    for (let i = 0; i < 20; i++) {
+        const pixel = document.createElement('div');
+        pixel.className = 'minecraft-pixel';
+        pixel.style.left = x + 'px';
+        pixel.style.top = y + 'px';
+        pixel.style.animationDelay = (i * 0.1) + 's';
+        effect.appendChild(pixel);
+    }
+    
+    setTimeout(() => {
+        effect.remove();
+    }, 3000);
 }
